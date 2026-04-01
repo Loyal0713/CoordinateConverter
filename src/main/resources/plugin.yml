@@ -1,0 +1,19 @@
+name: CoordinateConverter
+version: ${version}
+main: com.loyal0713.coordinateconverter.CoordinateConverter
+description: Converts coordinates between Overworld and Nether dimensions
+author: Loyal0713
+api-version: '1.13'
+
+commands:
+  coordconv:
+    description: Convert coordinates between Overworld and Nether
+    usage: /coordconv [<x> <z> [overworld|nether]]
+    aliases: [cc]
+    permission: coordinateconverter.use
+    permission-message: You do not have permission to use this command!
+
+permissions:
+  coordinateconverter.use:
+    description: Allows use of /coordconv
+    default: true
