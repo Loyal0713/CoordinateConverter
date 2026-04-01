@@ -117,8 +117,11 @@ public class CoordConvCommand implements CommandExecutor, TabCompleter {
     }
 
     private String formatFacing(Player player) {
-        String raw = player.getFacing().name(); // e.g. "NORTH"
-        return raw.charAt(0) + raw.substring(1).toLowerCase(); // "North"
+        float yaw = ((player.getLocation().getYaw() % 360) + 360) % 360;
+        if (yaw < 45 || yaw >= 315) return "South";
+        if (yaw < 135) return "West";
+        if (yaw < 225) return "North";
+        return "East";
     }
 
     @Override
